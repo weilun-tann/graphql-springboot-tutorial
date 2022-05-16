@@ -1,0 +1,27 @@
+# The accepted queries and mutations by the Spring Boot server
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+# The accepted queries by the Spring Boot server
+type Query {
+    allBooks: [Book!]!
+    book(isn: String!): Book!
+}
+
+# TODO - the accepted mutations by the Spring Boot server
+type Mutation {
+    addBook(isn: String!, title: String!,  publisher: String!, authors: [String!]!, publicationDate: String!): Book!
+    removeBook(isn: String!): Book
+}
+
+# Schema of a Book object represented on the server-side
+type Book {
+    isn: String!
+    title: String!
+    publisher: String!
+    authors: [String!]!
+    publishedDate: String!
+}
+
